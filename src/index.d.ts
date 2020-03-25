@@ -1,10 +1,14 @@
-declare namespace detectElementOverflow {
-    function collidedTop(element: HTMLElement, parent: HTMLElement)
-    function collidedBottom(element: HTMLElement, parent: HTMLElement)
-    function collidedLeft(element: HTMLElement, parent: HTMLElement)
-    function collidedRight(element: HTMLElement, parent: HTMLElement)
-    function overflowTop(element: HTMLElement, parent: HTMLElement)
-    function overflowBottom(element: HTMLElement, parent: HTMLElement)
-    function overflowLeft(element: HTMLElement, parent: HTMLElement)
-    function overflowRight(element: HTMLElement, parent: HTMLElement)
+declare module 'detect-element-overflow' {
+    export interface OverflowProperty {
+        collidedTop: boolean,
+        collidedBottom: boolean,
+        collidedLeft: boolean,
+        collidedRight: boolean,
+        overflowTop: number,
+        overflowBottom: number,
+        overflowLeft: number,
+        overflowRight: number
+    }
+
+    export function detectElementOverflow(element: HTMLElement, container: HTMLElement): OverflowProperty;
 }
